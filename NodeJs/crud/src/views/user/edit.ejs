@@ -1,0 +1,16 @@
+<%- include('../layout/header'); -%>
+<div class="container">
+    <form action="/update/<%= user.id %>" method="post">
+        <div>
+            <label for="username">Nombre de usuario</label>
+            <input type="text" name="username" id="username" class="form-control" value="<%= user.username %>">
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="text" name="password" id="password" class="form-control" value="<%= user.password %>">
+        </div>
+        <button type="submit" class="btn btn-success mt-2">Actualizar</button>
+    </form>
+</div>
+
+<%- include('../layout/footer'); -%>

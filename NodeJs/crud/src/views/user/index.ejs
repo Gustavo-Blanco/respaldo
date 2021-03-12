@@ -1,0 +1,35 @@
+<%- include('../layout/header'); -%>
+
+    <div class="container"> 
+        <a href="/create" class="btn btn-success">Nuevo</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre de usuario</th>
+                    <th scope="col">Contraseña</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user=> { %>
+                    <tr>
+                        <td>
+                            <%= user.id %>
+                        </td>
+                        <td>
+                            <%= user.username %>
+                        </td>
+                        <td>
+                            <%= user.password %>
+                        </td>
+                        <td>
+                            <a href="/edit/<%=user.id %>" class="btn btn-warning">Editar</a>
+                            <a href="/delete/<%=user.id %>" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+<%- include('../layout/footer'); -%>
